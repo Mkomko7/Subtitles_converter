@@ -33,7 +33,7 @@ class MyTestCase(unittest.TestCase):
     @unittest.expectedFailure
     def test_list_sub_files_no_match(self):
         files_list = ["subs.shp"]
-        extensions = (".txt", ".ass")
+        extensions = (".txt", ".ass", ".srt")
         out_list = Processor.list_sub_files(files_list, extensions)
         self.assertListEqual(files_list, out_list)
 

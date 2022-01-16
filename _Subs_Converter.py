@@ -1,10 +1,11 @@
 import pysubs2
 import os
+import traceback
 
 
 class Processor:
     def __init__(self):
-        extensions_tuple = (".ass", ".txt")
+        extensions_tuple = (".ass", ".txt", ".srt")
         self.in_folder = os.path.join(os.getcwd(), "in_subs")
         in_files = Processor.list_files(self.in_folder)
         self.in_sub_files = Processor.list_sub_files(in_files, extensions_tuple)
@@ -64,7 +65,8 @@ def main():
         input("===Koniec. Nacisnij ENTER aby zamknac. ===")
 
     except Exception:
-        # error = traceback.print_exc()
+        error = traceback.print_exc()
+        print(error)
         input("!!! Nie dziala !!!\nNacisnij ENTER aby zamknac")
 
 
